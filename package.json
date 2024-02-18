@@ -1,0 +1,25 @@
+{
+  "name": "tamar-jewlery",
+  "version": "1.0.0",
+  "description": "Tamar Kfir Jewelry Website",
+  "default": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "targets": {
+    "main": false
+  },
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Daniel Pagis",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/code-frame": "^7.23.5",
+    "parcel": "^2.11.0"
+  },
+  "dependencies": {
+    "core-js": "^3.35.1",
+    "npm": "^10.4.0",
+    "regenerator-runtime": "^0.14.1"
+  }
+}

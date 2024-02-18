@@ -1,0 +1,316 @@
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 4px solid black; */
+}
+
+header {
+  background-image: url(../imgs/IMG_9699.jpg);
+  background-position: 0cm, 20cm;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  width: 100%;
+  height: 80vh;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 4px solid rgb(177, 20, 143); */
+}
+
+.menu {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: -5px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
+}
+
+.menu.sticky {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  z-index: 99;
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.menubars-svg {
+  display: none;
+}
+
+#show-menu-button {
+  display: none;
+}
+
+.shoppingcart-svg {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  fill: rgb(0, 179, 255);
+  width: 25px;
+  height: 25px;
+  /* position: absolute; */
+  left: 600px;
+}
+
+.shoppingcart-svg:hover {
+  fill: rgb(121, 221, 255);
+}
+
+.cart-number {
+  font-size: 0.9rem;
+  position: absolute;
+  right: 6.5%; 
+  top: 13%;
+  background-color: rgb(255, 132, 0);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.menu__ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 50px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(228, 152, 37); */
+}
+
+/* .menu__ul.sticky {
+    display: none;
+    background-color: rgba(255, 255, 255, 0.9);
+  } */
+
+/* .menu__ul.sticky {
+    display: flex;
+    position: absolute;
+  
+    transition: all;
+    transition-duration: 500ms;
+  } */
+
+.li {
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid black;
+  list-style: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(46, 37, 228); */
+}
+
+.li:hover {
+  background-color: rgba(255, 255, 255, 0.925);
+  cursor: pointer;
+}
+
+.li.sticky:hover {
+  background-color: rgba(212, 199, 171, 0.925);
+}
+
+a {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(40, 228, 37); */
+}
+
+.categories-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  text-align: center;
+  list-style: none;
+  border: 1px solid;
+  position: relative;
+  top: -20rem;
+  background-color: rgba(250, 235, 215, 0.5);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  opacity: 0;
+  /* z-index: -99; */
+}
+
+.categories-list--active {
+  opacity: 1;
+  z-index: 99;
+  transform: translateY(20rem);
+}
+
+.category-item {
+  position: relative;
+  
+}
+
+.category-item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.category-title {
+  margin-top: 65px;
+  margin-bottom: 45px;
+  font-weight: 100;
+  font-size: 2.3rem;
+
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(40, 228, 37); */
+}
+
+.products-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  width: 95vw;
+  height: 100%;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid rgb(179, 0, 255); */
+}
+
+.item-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid rgb(179, 0, 255); */
+}
+
+.rear-image {
+  opacity: 0;
+  z-index: -1;
+}
+
+.image-item {
+  height: 20rem;
+  width: 20rem;
+  object-fit: cover;
+  margin: 15px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid red; */
+}
+
+.rear-image {
+  position: absolute;
+  top: 0;
+  
+  transition: all;
+  transition-duration: 800ms;
+  transition-property: all;
+}
+
+.front-image {
+  transition: all;
+  transition-duration: 800ms;
+  transition-property: all;
+}
+
+.add-to-cart-btn {
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  top: 18rem;
+  background-color: rgba(232, 165, 138, 0.559);
+  border: none;
+  z-index: 2;
+}
+
+.add-to-cart-btn:hover {
+  background-color: rgba(231, 187, 169, 0.559);
+  width: 200px;
+  height: 40px;
+
+  transition: all;
+  transition-duration: 500ms;
+}
+
+.large-imgs-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.58);
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid red; */
+}
+
+.large-img-item {
+  width: 600px;
+  height: 430px;
+  margin: 10px;
+}
+/* ----------- Slider end ----------------- */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.go-to-top {
+  border: 1px solid;
+  width: 10%;
+  background-color: rgba(255, 255, 255, 0.712);
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 5px;
+}
+
+.go-to-top:hover {
+  border: rgb(113, 101, 33), solid;
+  color: rgb(113, 101, 33);
+  cursor: pointer;
+  background-color: rgba(196, 106, 181, 0.377);
+}

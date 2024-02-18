@@ -1,0 +1,285 @@
+body {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-image: url(../imgs/main-photo.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 169, 177); */
+}
+
+header {
+  min-width: 100%;
+  height: 10vh;
+  margin-bottom: 20px;
+}
+
+#menu {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
+}
+
+.menu {
+  display: none;
+}
+
+.menu-desktop {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  top: -5px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
+}
+
+.menu-desktop.sticky {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  z-index: 99;
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.menubars-svg {
+  display: none;
+}
+
+#menubars-svg {
+  display: none;
+}
+
+#show-menu-button {
+  display: none;
+}
+
+.shoppingcart-svg {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  fill: rgb(0, 179, 255);
+  width: 25px;
+  height: 25px;
+  /* position: absolute; */
+  left: 0px;
+}
+
+.shoppingcart-svg:hover {
+  fill: rgb(121, 221, 255);
+}
+
+.cart-number {
+  font-size: 0.9rem;
+  position: absolute;
+  right: 6.5%;
+  top: 0.5%;
+  background-color: rgb(255, 132, 0);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.menu__ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 50px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(228, 152, 37); */
+}
+
+.li {
+  width: 100%;
+  height: 50px;
+  border-right: 1px solid black;
+  list-style: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(46, 37, 228); */
+}
+
+.li:hover {
+  background-color: rgba(255, 255, 255, 0.925);
+  cursor: pointer;
+}
+
+.li.sticky:hover {
+  background-color: rgba(212, 199, 171, 0.925);
+}
+
+a {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(40, 228, 37); */
+}
+
+.categories-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  text-align: center;
+  list-style: none;
+  border: 1px solid;
+  position: relative;
+  top: -20rem;
+  background-color: rgba(250, 235, 215, 0.5);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  opacity: 0;
+}
+
+.categories-list--active {
+  opacity: 1;
+  z-index: 99;
+  transform: translateY(20rem);
+}
+
+.category-item {
+  position: relative;
+}
+
+.category-item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 60vw;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.911);
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid green; */
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  margin: 20px;
+  width: 100%;
+  text-align: center;
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid blue; */
+}
+
+.contact-form {
+  display: flex;
+  flex-flow: column;
+  width: 50vw;
+  height: 80vh;
+  background-color: rgba(222, 193, 193, 0.326);
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid red; */
+}
+
+#customer-name {
+  font-size: 1.1rem;
+  height: 50px;
+  width: 200px;
+  margin: 15px;
+}
+#customer-lastname {
+  font-size: 1.1rem;
+  height: 50px;
+  width: 200px;
+  margin: 15px;
+}
+
+#email-input {
+  font-size: 1.1rem;
+  height: 50px;
+  width: 80%;
+  margin: 15px;
+}
+
+#contact-text {
+  font-size: 1.1rem;
+  width: 80%;
+  height: 300px;
+  margin: 15px;
+}
+
+#submit {
+  font-size: 1.3rem;
+  width: 25%;
+  min-width: 100px;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+  background-image: linear-gradient(rgb(200, 181, 77), white);
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid rgb(0, 255, 247); */
+}
+
+#submit:hover {
+  font-size: 1.4rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-image: linear-gradient(
+    rgba(205, 183, 58, 0.785),
+    rgba(255, 255, 255, 0.772)
+  );
+}
+
+.submit {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid rgb(255, 0, 208); */
+}
