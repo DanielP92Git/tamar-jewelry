@@ -55,6 +55,7 @@ const changeSVG = function () {
 
 };
 menuBars.addEventListener('click', changeSVG)
+
 // const getRect = parent.getClientRects()
 // getRect.addEventListener('scroll', changeSVG);
 

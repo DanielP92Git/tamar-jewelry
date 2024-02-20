@@ -7,7 +7,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-margin-bottom: 2rem;
+  margin-bottom: 2rem;
   height: 50vh;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -184,7 +184,7 @@ p {
   height: 30px;
   margin: 10px;
   position: relative;
-  top: 1%;
+  top: -3%;
   left: 85%;
   padding: 2px;
 
@@ -272,7 +272,7 @@ input[type='checkbox']:checked + .menu {
 main {
   display: flex;
   flex-flow: column;
-  
+
   max-height: 160rem;
   width: 100%;
 
