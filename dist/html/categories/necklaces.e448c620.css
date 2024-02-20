@@ -1,0 +1,250 @@
+body {
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+}
+
+header {
+  background-image: url("../../IMG_9699.c61e7cc5.jpg");
+  background-position: 0, 20cm;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+  position: relative;
+}
+
+.menu {
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  position: absolute;
+  top: -5px;
+}
+
+.menu.sticky {
+  z-index: 99;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  transition: all .5s;
+  display: flex;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.menubars-svg, #show-menu-button {
+  display: none;
+}
+
+.shoppingcart-svg {
+  fill: #00b3ff;
+  flex-flow: row;
+  justify-content: flex-start;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  left: 600px;
+}
+
+.shoppingcart-svg:hover {
+  fill: #79ddff;
+}
+
+.cart-number {
+  text-align: center;
+  background-color: #ff8400;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: .9rem;
+  position: absolute;
+  top: 13%;
+  right: 6.5%;
+}
+
+.menu__ul {
+  background-color: #fffc;
+  flex-flow: row;
+  justify-content: space-around;
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.li {
+  border-right: 1px solid #000;
+  width: 100%;
+  height: 50px;
+  list-style: none;
+}
+
+.li:hover {
+  cursor: pointer;
+  background-color: #ffffffec;
+}
+
+.li.sticky:hover {
+  background-color: #d4c7abec;
+}
+
+a {
+  text-align: center;
+  color: #000;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  display: flex;
+}
+
+.categories-list {
+  text-align: center;
+  opacity: 0;
+  background-color: #faebd780;
+  border: 1px solid;
+  flex-flow: column;
+  justify-content: space-evenly;
+  list-style: none;
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: linear;
+  display: flex;
+  position: relative;
+  top: -20rem;
+}
+
+.categories-list--active {
+  opacity: 1;
+  z-index: 99;
+  transform: translateY(20rem);
+}
+
+.category-item {
+  position: relative;
+}
+
+.category-item:hover {
+  cursor: pointer;
+  background-color: #ffffff80;
+}
+
+.category-title {
+  margin-top: 65px;
+  margin-bottom: 45px;
+  font-family: Trebuchet MS, Lucida Sans Unicode, Lucida Grande, Lucida Sans, Arial, sans-serif;
+  font-size: 2.3rem;
+  font-weight: 100;
+}
+
+main {
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.products-container {
+  flex-flow: wrap;
+  justify-content: space-evenly;
+  width: 95vw;
+  height: 100%;
+  display: flex;
+}
+
+.item-container {
+  cursor: pointer;
+  flex-flow: column;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.rear-image {
+  opacity: 0;
+  z-index: -1;
+}
+
+.image-item {
+  object-fit: cover;
+  width: 20rem;
+  height: 20rem;
+  margin: 15px;
+}
+
+.rear-image {
+  transition: all .8s;
+  position: absolute;
+  top: 0;
+}
+
+.front-image {
+  transition: all .8s;
+}
+
+.add-to-cart-btn {
+  cursor: pointer;
+  z-index: 2;
+  background-color: #e8a58a8f;
+  border: none;
+  width: 200px;
+  height: 30px;
+  position: absolute;
+  top: 18rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #e7bba98f;
+  width: 200px;
+  height: 40px;
+  transition: all .5s;
+}
+
+.large-imgs-container {
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 50px;
+  display: flex;
+  box-shadow: 0 0 50px -10px #00000094;
+}
+
+.large-img-item {
+  width: 600px;
+  height: 430px;
+  margin: 10px;
+}
+
+.go-to-top {
+  background-color: #ffffffb6;
+  border: 1px solid;
+  width: 10%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 5px;
+}
+
+.go-to-top:hover {
+  border: #716521, solid;
+  color: #716521;
+  cursor: pointer;
+  background-color: #c46ab560;
+}
+
+/*# sourceMappingURL=necklaces.e448c620.css.map */
