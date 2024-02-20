@@ -185,7 +185,7 @@ p {
   margin: 10px;
   position: relative;
   top: 1%;
-  left: 91%;
+  left: 85%;
   padding: 2px;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -319,7 +319,7 @@ h1 {
 .workshop-description-second {
   background-color: rgba(245, 245, 220, 0.9);
   box-shadow: 12px 2px 30px 2px rgb(168, 163, 154);
-  font-size: 3vw;
+  font-size: 1.2rem;
   padding: 1rem;
   box-sizing: border-box;
   padding: 30px;

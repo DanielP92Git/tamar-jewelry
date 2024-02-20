@@ -1,8 +1,7 @@
-import 'core-js/stable';
+import 'core-js/actual';
 import 'regenerator-runtime/runtime';
 import * as categoriesFns from './categories.js';
-import * as homeFn from './homePage.js';
-
+import * as homeFn from './homePage.js'
 
 // Modal windows:
 //////////////////////////////////////////////////
