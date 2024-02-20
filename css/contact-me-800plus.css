@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   background-image: url(../imgs/main-photo.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -282,4 +282,47 @@ h1 {
 
   /* ~~~~FOR DEBUGGING~~~~ */
   /* border: 3px solid rgb(255, 0, 208); */
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 15rem;
+  background-color: rgb(132, 132, 132);
+  margin-top: 30px;
+
+  /* ~~~~FOR DEBUGGING~~~~ */
+  /* border: 3px solid rgb(255, 0, 208); */
+}
+
+.footer-right-column,
+.footer-middle-column,
+.footer-left-column {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 23%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid rgb(89, 0, 255); */
+}
+
+.footer-item {
+  color: white;
+  width: 9rem;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 1px solid green; */
+}
+
+.footer-item:hover {
+  color: black;
+}
+
+.rights-text {
+  color: white;
+  margin-top: 3rem;
 }
