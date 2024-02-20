@@ -1,4 +1,4 @@
-import './core-js/actual';
+import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import * as categoriesFns from './categories.js';
 import * as homeFn from './homePage.js';
