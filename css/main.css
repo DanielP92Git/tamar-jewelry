@@ -1,7 +1,7 @@
 body {
   display: flex;
   flex-flow: column;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -16,7 +16,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  min-width: 100%;
+  /* width: 100%; */
   height: 80vh;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -24,16 +24,18 @@ header {
 }
 
 .logo {
-  display: flex;
-  background-image: url(/imgs/tamar-logo.png);
+  display: block;
+  background-image: url(../imgs/tamar-logo.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 180px;
   height: 140px;
   position: relative;
-  left: -100%;
-  top: 7%;
+  left: 5%;
+  top: 70%;
+
+  z-index: 0;
 }
 
 .modal {
@@ -194,8 +196,8 @@ p {
   height: 30px;
   margin: 10px;
   position: absolute;
-  top: 3%;
-  left: 90%;
+  top: 2%;
+  left: 85%;
   padding: 2px;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -206,12 +208,16 @@ p {
   cursor: pointer;
 }
 
+.toggle-svg {
+  display: none;
+}
+
 #menubars-svg {
   fill: rgb(0, 0, 0);
 }
 
 .shoppingcart-svg {
-display: none;
+  display: none;
 }
 
 .cart-number {
@@ -329,7 +335,7 @@ main {
 .slider-image-item {
   padding: 5px;
   width: calc(100% / 3);
-  width: 33%;
+  width: 100%;
   /* height: 100%; */
   transition: transform 1s;
 
@@ -343,10 +349,10 @@ main {
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 7%;
+  top: 4%;
   height: 20%;
-  width: 2.5%;
-  background-color: rgba(255, 250, 218, 0.5);
+  width: 10%;
+  background-color: rgba(255, 250, 218, 0.6);
   border: 0.5px solid rgba(198, 170, 118, 0.477);
   cursor: pointer;
   font-size: 2rem;
@@ -368,13 +374,16 @@ main {
 
 /* ----------- Slider end ----------------- */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
 .large-imgs-container {
   display: flex;
-  flex-flow: row;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 95%;
+  height: 100%;
   margin-top: 50px;
+  margin-bottom: 50px;
 
   box-shadow: 0px 0px 50px -10px rgba(0, 0, 0, 0.58);
 
@@ -383,8 +392,30 @@ main {
 }
 
 .large-img-item {
-  width: 50%;
+  width: 100%;
   margin: 10px;
+  /* opacity: 0; */
+  transform: translateY(5rem);
+}
+
+.large-img-item.reveal {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+  transform: translateY(0rem);
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+}
+
+.large-img-item.hidden {
+  width: 100%;
+  margin: 10px;
+  opacity: 0;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 3px solid rgb(4, 255, 0); */
@@ -396,8 +427,55 @@ main {
   width: 15%;
   background-color: rgba(255, 255, 255, 0.712);
   padding: 5px;
-  margin: 10px;
+  margin: 30px;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 3px solid rgb(4, 255, 0); */
+}
+
+.footer {
+  display: flex;
+  flex-flow: row wrap;
+  /* justify-content: space-between; */
+  width: 100%;
+  background-color: rgb(132, 132, 132);
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid rgb(4, 255, 0); */
+}
+
+.footer-right-column,
+.footer-middle-column,
+.footer-left-column {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 30px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 3px solid rgb(89, 0, 255); */
+}
+.footer-middle-column {
+  height: 100%;
+}
+
+.footer-item {
+  color: white;
+  width: 9rem;
+  margin-top: 10px;
+  margin-bottom: 25px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 1px solid green; */
+}
+
+.footer-item:hover {
+  color: black;
+}
+
+.rights-text {
+  color: white;
+  margin-top: 3rem;
 }
