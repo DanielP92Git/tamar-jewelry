@@ -1,7 +1,7 @@
 import 'core-js/actual';
 import 'regenerator-runtime/runtime';
 import * as categoriesFns from './categories.js';
-import * as homeFn from './homePage.js'
+import * as homeFn from './homePage.js';
 
 // Modal windows:
 //////////////////////////////////////////////////
@@ -44,17 +44,15 @@ homeFn.checkId();
 const menuBars = document.querySelector('.menubars-svg');
 const menuBarsSVG = document.querySelector('.menubars-toggle');
 
-
 const changeSVG = function () {
   const parent = document.querySelector('.menubars-toggle');
-  parent.classList.toggle('close')
+  parent.classList.toggle('close');
   const check = parent.classList.contains('close');
   let icon = '-svg';
-  icon = (!check ? 'close': 'menubars') + icon;
-  document.querySelector("use").setAttribute('href', `#${icon}`);
-
+  icon = (!check ? 'close' : 'menubars') + icon;
+  document.querySelector('use').setAttribute('href', `#${icon}`);
 };
-menuBars.addEventListener('click', changeSVG)
+menuBars.addEventListener('click', changeSVG);
 
 // const getRect = parent.getClientRects()
 // getRect.addEventListener('scroll', changeSVG);
@@ -64,11 +62,10 @@ menuBars.addEventListener('click', changeSVG)
 
 //   const markup =
 //   `<use xlink:href="#shoppingcart-svg"></use>`;
-  
+
 //   parent.remove(markup);
 
 // };
-
 
 //////////////////////////////////////////////////
 // Categories reveal
@@ -109,10 +106,10 @@ const menu = document.querySelector('.menu');
 
 const stickyMenu = function (entries) {
   const [entry] = entries;
-  
+
   if (!entry.isIntersecting)
-  menu.classList.add('sticky') + menu.classList.remove('hidden');
-else menu.classList.remove('sticky');
+    menu.classList.add('sticky') + menu.classList.remove('hidden');
+  else menu.classList.remove('sticky');
 };
 
 const headerObserver = new IntersectionObserver(stickyMenu, {
@@ -140,10 +137,9 @@ headerObserverTwo.observe(header);
 // Reveal end
 //////////////////////////////////////////////////
 
-
 // const imgs = document.querySelectorAll('.large-img-item');
 // const imgReveal = function(entries, images) {
-  
+
 //   const [entry] = entries;
 //   const [img] = images;
 //   if (entry.isIntersecting) {
@@ -157,3 +153,33 @@ headerObserverTwo.observe(header);
 //   threshold: 0,
 // })
 // imgObserver.observe(imgs[0],imgs[1]);
+const images = document.querySelectorAll('.workshop-image');
+
+let curImg = 0;
+const maxImages = images.length;
+
+const timeOut = function () {
+  setTimeout(() => {
+    goToImage();
+  }, 1000);
+};
+timeOut();
+
+const goToImage = function (slide) {
+  images.forEach(img => (img.style.transform = `translateX(${-100 * slide}%)`));
+  // images.forEach(img => (img.style.transform = `translateX(-100%)`));
+  setTimeout(() => {
+    nextImage();
+  }, 3000);
+};
+
+const nextImage = function () {
+  if (curImg === maxImages - 1) {
+    curImg = 0;
+  } else {
+    curImg++;
+  }
+  console.log(curImg);
+  goToImage(curImg);
+};
+// pageWindow.addEventListener('click', goToImage)

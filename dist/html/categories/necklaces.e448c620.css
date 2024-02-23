@@ -73,7 +73,7 @@ header {
 }
 
 .menu__ul {
-  background-color: #fffc;
+  background-color: #fff;
   flex-flow: row;
   justify-content: space-around;
   width: 100%;
@@ -90,7 +90,7 @@ header {
 
 .li:hover {
   cursor: pointer;
-  background-color: #ffffffec;
+  background-color: #d7d7d733;
 }
 
 .li.sticky:hover {
@@ -168,8 +168,11 @@ main {
 
 .item-container {
   cursor: pointer;
+  border: 1px solid #b6b6b6;
   flex-flow: column;
+  justify-content: space-evenly;
   align-items: center;
+  margin-bottom: 3rem;
   display: flex;
   position: relative;
 }
@@ -183,7 +186,7 @@ main {
   object-fit: cover;
   width: 20rem;
   height: 20rem;
-  margin: 15px;
+  margin: 5px;
 }
 
 .rear-image {
@@ -214,6 +217,11 @@ main {
   transition: all .5s;
 }
 
+.item-price {
+  color: #6d6d6d;
+  margin: .5rem;
+}
+
 .large-imgs-container {
   flex-flow: row;
   justify-content: center;
@@ -235,8 +243,8 @@ main {
   background-color: #ffffffb6;
   border: 1px solid;
   width: 10%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 80px;
+  margin-bottom: 60px;
   padding: 5px;
 }
 
@@ -245,6 +253,41 @@ main {
   color: #716521;
   cursor: pointer;
   background-color: #c46ab560;
+}
+
+.footer {
+  background-color: #fff;
+  justify-content: space-between;
+  width: 100%;
+  height: 15rem;
+  margin-top: 8rem;
+  display: flex;
+  box-shadow: 10px -10px 30px -10px;
+}
+
+.footer-right-column, .footer-middle-column, .footer-left-column {
+  flex-flow: column;
+  align-items: center;
+  width: 23%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+}
+
+.footer-item {
+  color: #000;
+  width: 9rem;
+  font-size: 1rem;
+}
+
+.footer-item:hover {
+  color: #9f9f9f;
+}
+
+.rights-text {
+  color: #000;
+  width: 20rem;
+  margin-top: 3rem;
 }
 
 /*# sourceMappingURL=necklaces.e448c620.css.map */

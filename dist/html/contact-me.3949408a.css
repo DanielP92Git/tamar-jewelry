@@ -229,12 +229,13 @@ h1 {
 }
 
 .footer {
-  background-color: #848484;
+  background-color: #fff;
   justify-content: space-between;
   width: 100%;
   height: 15rem;
-  margin-top: 30px;
+  margin-top: 8rem;
   display: flex;
+  box-shadow: 10px -10px 30px -10px;
 }
 
 .footer-right-column, .footer-middle-column, .footer-left-column {
@@ -247,16 +248,18 @@ h1 {
 }
 
 .footer-item {
-  color: #fff;
+  color: #000;
   width: 9rem;
+  font-size: 1rem;
 }
 
 .footer-item:hover {
-  color: #000;
+  color: #9f9f9f;
 }
 
 .rights-text {
-  color: #fff;
+  color: #000;
+  width: 20rem;
   margin-top: 3rem;
 }
 
