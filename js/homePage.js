@@ -2,7 +2,7 @@ const images = document.querySelectorAll('.slider-image-item');
 const sliderBtnRight = document.querySelector('.slider-btn--right');
 const sliderBtnLeft = document.querySelector('.slider-btn--left');
 
-// Modal windows:
+// Modal window:
 ////////////////////////////////////////////////
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
@@ -14,9 +14,25 @@ const thanksHide = document.querySelector('.hide');
 // const subscribeLabel = document.querySelector('.subscribe-label');
 // const subscribeImage = document.querySelector('#subscribe-image');
 
+const openModal = async function () {
+  try {
+    const timeoutModal = function () {
+      modal.style.display = 'none';
+      setTimeout(() => {
+        modal.classList.add('modal-reveal');
+        modal.style.display = 'flex';
+        overlay.classList.add('overlay-reveal');
+      }, 3000);
+    };
+    await window.addEventListener('load', timeoutModal);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 const closeModal = function () {
   modal.style.display = 'none';
-  overlay.style.display = 'none';
+  overlay.classList.remove('overlay-reveal');
 };
 
 const closeSubscribe = function () {
@@ -29,9 +45,10 @@ const closeThanks = function () {
   overlay.style.display = 'none';
 };
 
-// Modal windows end
-//////////////////////////////////////////////////
+// Modal window end
+//````````````````````````````````````````````````````````
 
+// Image Slider
 let curSlide = 0;
 const maxSlide = images.length;
 
@@ -57,8 +74,11 @@ const prevImage = function () {
   goToImage(curSlide);
 };
 
-//////////////////////////////////////////////////
+// Image slider END
+// ````````````````````````````````````````````````````````````
+
 // Categories reveal
+//////////////////////////////////////////////////
 
 export const categoriesList = document.querySelector('.categories-list');
 export const categoriesTab = document.querySelector('.categories-tab');
@@ -71,21 +91,21 @@ export const hideCategories = function () {
   categoriesList.classList.remove('categories-list--active');
 };
 
-// End categories reveal
-//////////////////////////////////////////////////
+// Categories reveal END
+// `````````````````````````````````````````````````````
 
 // Go to top:
 //////////////////////////////////////////////////
 const goToTop = document.querySelector('.go-to-top');
 const header = document.querySelector('header');
 
-const movePageTop = function () {
+export const movePageTop = function () {
   header.scrollIntoView({ behavior: 'smooth' });
-  window.op
-}
+  window.op;
+};
 
-// Go to top end
-//////////////////////////////////////////////////
+// Go to top END
+// ````````````````````````````````````````````````````````
 
 const bodyCheck = document.body.id.includes('home');
 
@@ -100,8 +120,5 @@ export const checkId = function () {
   overlay.addEventListener('click', closeModal);
   submitSubscribe.addEventListener('click', closeSubscribe);
   goToTop.addEventListener('click', movePageTop);
+  openModal();
 };
-
-// sliderBtnRight.addEventListener('click', nextImage)
-//     sliderBtnLeft.addEventListener('click', prevImage)
-// Event listeners

@@ -23,6 +23,11 @@
     </svg>
 
     <header>
+      <label for="show-menu-button" class="menubars-svg"><svg class="menubars-toggle close">
+          <use xlink:href="#menubars-svg"></use>
+        </svg>
+      </label>
+      <input type="checkbox" id="show-menu-button">
       <nav class="desktop-menu">
         <ul class="menu__ul">
           <li class="li"><a href="/index.html">Home</a></li>
@@ -30,27 +35,27 @@
             <a href="#">Categories ▾</a>
             <ul class="categories-list">
               <li class="category-item category-item--necklace">
-                <a href="/html/categories/necklaces.html" target="_blank">Necklaces</a>
+                <a href="/html/categories/necklaces.html">Necklaces</a>
               </li>
               <li class="category-item category-item--crochet-necklace">
-                <a href="/html/categories/crochetNecklaces.html" target="_blank">Crochet Necklaces</a>
+                <a href="/html/categories/crochetNecklaces.html">Crochet Necklaces</a>
               </li>
               <li class="category-item category-item--hoops">
-                <a href="/html/categories/hoops.html" target="_blank">Hoop Earrings</a>
+                <a href="/html/categories/hoops.html">Hoop Earrings</a>
               </li>
               <li class="category-item category-item--bracelets">
-                <a href="/html/categories/bracelets.html" target="_blank">Bracelets</a>
+                <a href="/html/categories/bracelets.html">Bracelets</a>
               </li>
             </ul>
           </li>
           <li class="li">
-            <a href="/html/jewelry-workshop.html" target="_blank">Jewelry Workshop</a>
+            <a href="/html/jewelry-workshop.html">Jewelry Workshop</a>
           </li>
           <li class="li">
-            <a href="/html/about.html" target="_blank">About</a>
+            <a href="/html/about.html">About</a>
           </li>
           <li class="li" id="contact-me">
-            <a href="/html/contact-me.html" target="_blank">Contact Me</a>
+            <a href="/html/contact-me.html">Contact Me</a>
           </li>
           <a href="/html/cart.html"><svg class="shoppingcart-svg">
               <use xlink:href="#shoppingcart-svg"></use></svg></a>
@@ -60,51 +65,19 @@
     </header>
 
     <main>
-      <div class="menubars-sidemenu-container">
-        <label for="show-menu-button" class="menubars-svg"><svg><use xlink:href="#menubars-svg"></use></svg></label>
-        <input type="checkbox" id="show-menu-button">
-        <nav class="menu">
-          <ul class="menu__ul">
-            <li class="li"><a href="/index.html">Home</a></li>
-            <li class="li categories-tab">
-              <a href="#">Categories ▾</a>
-              <ul class="categories-list">
-                <li class="category-item category-item--necklace">
-                  <a href="/html/categories/necklaces.html" target="_blank">Necklaces</a>
-                </li>
-                <li class="category-item category-item--crochet-necklace">
-                  <a href="/html/categories/crochetNecklaces.html" target="_blank">Crochet Necklaces</a>
-                </li>
-                <li class="category-item category-item--hoops">
-                  <a href="/html/categories/hoops.html" target="_blank">Hoop Earrings</a>
-                </li>
-                <li class="category-item category-item--bracelets">
-                  <a href="/html/categories/bracelets.html" target="_blank">Bracelets</a>
-                </li>
-              </ul>
-            </li>
-            <li class="li">
-              <a href="/html/jewelry-workshop.html" target="_blank">Jewelry Workshop</a>
-            </li>
-            <li class="li">
-              <a href="/html/about.html" target="_blank">About</a>
-            </li>
-            <li class="li" id="contact-me">
-              <a href="/html/contact-me.html" target="_blank">Contact Me</a>
-            </li>
-            <a href="/html/cart.html"><svg class="shoppingcart-svg">
-                <use xlink:href="#shoppingcart-svg"></use></svg></a>
-            <span class="cart-number">0</span>
-          </ul>
-        </nav>
-      </div>
-
       <section class="contact-form">
         <h1>Contact Me</h1>
         <input type="text" id="customer-name" placeholder="Name*" title="Please enter your name here" required="" autofocus="">
         <input type="text" id="customer-lastname" placeholder="Last Name*" title="Please enter your name here" required="">
         <input type="email" id="email-input" placeholder="Email*" title="Please enter your email here" required="">
-        <input type="text" id="contact-text" placeholder="Your message*" title="Please enter your message here" required="">
+        <textarea name="" placeholder="Your message*" id="contact-text"></textarea>
+        <!-- <input
+          type="text"
+          id="contact-text"
+          placeholder="Your message*"
+          title="Please enter your message here"
+          required />-->
+
         <div class="submit">
           <input type="submit" id="submit">
         </div>

@@ -16,59 +16,10 @@ body {
 
 header {
   min-width: 100%;
-  height: 10vh;
   margin-bottom: 20px;
 }
 
-#menu {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(20, 177, 35); */
-}
-
-.menu {
-  display: none;
-}
-
-.menu-desktop {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  position: absolute;
-  top: -5px;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(20, 177, 35); */
-}
-
-.menu-desktop.sticky {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  z-index: 99;
-
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-  position: fixed;
-}
-
-.menu.hidden {
-  opacity: 0;
-  transform: translateY(8rem);
-}
+/* ~~~~~~ Mobile Menu ~~~~~~~ */
 
 .menubars-svg {
   display: none;
@@ -80,6 +31,123 @@ header {
 
 #show-menu-button {
   display: none;
+}
+
+/* ````` Mobile Menu END ``````` */
+
+/* ~~~~~~~ Desktop Navbar ~~~~~~~~~ */
+
+.menu {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  z-index: 7;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
+}
+
+.menu__ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  height: 50px;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(228, 152, 37); */
+}
+
+.li {
+  width: 100%;
+  height: 50px;
+  list-style: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(46, 37, 228); */
+}
+
+.li:hover {
+  cursor: pointer;
+}
+
+/* .li.sticky:hover {
+  background-color: rgba(212, 199, 171, 0.925);
+} */
+
+a {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  color: black;
+  font-size: 1.1rem;
+  text-decoration: none;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(40, 228, 37); */
+}
+
+a:hover {
+  color: rgb(152, 152, 152);
+}
+
+.categories-list {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+  text-align: center;
+  list-style: none;
+  border: 1px solid;
+  position: relative;
+  top: -20rem;
+  background-color: rgba(250, 235, 215, 0.5);
+  transition-property: all;
+  transition-duration: 300ms;
+  transition-timing-function: linear;
+  opacity: 0;
+  z-index: -1;
+}
+
+.categories-list--active {
+  opacity: 1;
+  z-index: 1;
+  transform: translateY(20rem);
+}
+
+.category-item {
+  position: relative;
+}
+
+.category-item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu.sticky {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: 8;
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
 }
 
 .shoppingcart-svg {
@@ -108,85 +176,8 @@ header {
   height: 15px;
   border-radius: 50%;
   text-align: center;
-  /* padding-bottom: 10px; */
 }
-
-.menu__ul {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  background-color: rgba(255, 255, 255, 0.8);
-  width: 100%;
-  height: 50px;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(228, 152, 37); */
-}
-
-.li {
-  width: 100%;
-  height: 50px;
-  list-style: none;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(46, 37, 228); */
-}
-
-.li:hover {
-  background-color: rgba(255, 255, 255, 0.925);
-  cursor: pointer;
-}
-
-.li.sticky:hover {
-  background-color: rgba(212, 199, 171, 0.925);
-}
-
-a {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100%;
-  height: 50px;
-  color: black;
-  font-size: 1.1rem;
-  text-decoration: none;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(40, 228, 37); */
-}
-
-.categories-list {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-evenly;
-  text-align: center;
-  list-style: none;
-  border: 1px solid;
-  position: relative;
-  top: -20rem;
-  background-color: rgba(250, 235, 215, 0.5);
-  transition-property: all;
-  transition-duration: 300ms;
-  transition-timing-function: linear;
-  opacity: 0;
-}
-
-.categories-list--active {
-  opacity: 1;
-  z-index: 99;
-  transform: translateY(20rem);
-}
-
-.category-item {
-  position: relative;
-}
-
-.category-item:hover {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.5);
-}
+/* ```````Navbar END`````````` */
 
 main {
   display: flex;
@@ -247,8 +238,9 @@ h1 {
 #contact-text {
   font-size: 1.1rem;
   width: 80%;
-  height: 300px;
   margin: 15px;
+  padding-bottom: 100px;
+  resize: none;
 }
 
 #submit {

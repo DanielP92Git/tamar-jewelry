@@ -1,4 +1,4 @@
-import { revealCategories, hideCategories, categoriesList, categoriesTab } from './homePage';
+import { revealCategories, hideCategories, categoriesList, categoriesTab, movePageTop } from './homePage';
 
 // Workshop page images slider
 ///////////////////////////////////////
@@ -33,6 +33,7 @@ const nextImage = function () {
 
 // Workshop END
 ///////////////////////////////////////
+const goToTop = document.querySelector('.go-to-top');
 
 const bodyCheck = document.body.id.includes('workshop');
 
@@ -40,5 +41,6 @@ export const checkId = function () {
   if (!bodyCheck) return;
   categoriesTab.addEventListener('mouseover', revealCategories);
   categoriesTab.addEventListener('mouseleave', hideCategories);
+  goToTop.addEventListener('click', movePageTop);
   timeOut();
 };

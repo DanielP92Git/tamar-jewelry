@@ -2487,6 +2487,7 @@ parcelHelpers.export(exports, "fronFlipper", ()=>fronFlipper);
 parcelHelpers.export(exports, "backFlipper", ()=>backFlipper);
 parcelHelpers.export(exports, "checkId", ()=>checkId);
 var _homePageJs = require("./homePage.js");
+var _modelJs = require("./model.js");
 //////////////////////////////////////////////////////////
 // This javascript file is for all of the categories pages
 /////////////////////////////////////////////////////////
@@ -2524,7 +2525,7 @@ const checkId = function() {
     addToCartBtns.forEach((btn)=>btn.addEventListener("click", addToCartFn));
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./homePage.js":"AD1zb"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./homePage.js":"AD1zb","./model.js":"Py0LO"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2561,11 +2562,12 @@ parcelHelpers.export(exports, "categoriesList", ()=>categoriesList);
 parcelHelpers.export(exports, "categoriesTab", ()=>categoriesTab);
 parcelHelpers.export(exports, "revealCategories", ()=>revealCategories);
 parcelHelpers.export(exports, "hideCategories", ()=>hideCategories);
+parcelHelpers.export(exports, "movePageTop", ()=>movePageTop);
 parcelHelpers.export(exports, "checkId", ()=>checkId);
 const images = document.querySelectorAll(".slider-image-item");
 const sliderBtnRight = document.querySelector(".slider-btn--right");
 const sliderBtnLeft = document.querySelector(".slider-btn--left");
-// Modal windows:
+// Modal window:
 ////////////////////////////////////////////////
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
@@ -2576,9 +2578,24 @@ const thanksHide = document.querySelector(".hide");
 // const subscribeEmail = document.querySelector('#subscribe-email');
 // const subscribeLabel = document.querySelector('.subscribe-label');
 // const subscribeImage = document.querySelector('#subscribe-image');
+const openModal = async function() {
+    try {
+        const timeoutModal = function() {
+            modal.style.display = "none";
+            setTimeout(()=>{
+                modal.classList.add("modal-reveal");
+                modal.style.display = "flex";
+                overlay.classList.add("overlay-reveal");
+            }, 3000);
+        };
+        await window.addEventListener("load", timeoutModal);
+    } catch (err) {
+        console.error(err);
+    }
+};
 const closeModal = function() {
     modal.style.display = "none";
-    overlay.style.display = "none";
+    overlay.classList.remove("overlay-reveal");
 };
 const closeSubscribe = function() {
     modal.style.display = "none";
@@ -2588,8 +2605,9 @@ const closeThanks = function() {
     thanksHide.classList.add("hide");
     overlay.style.display = "none";
 };
-// Modal windows end
-//////////////////////////////////////////////////
+// Modal window end
+//````````````````````````````````````````````````````````
+// Image Slider
 let curSlide = 0;
 const maxSlide = images.length;
 const goToImage = function(slide) {
@@ -2613,8 +2631,8 @@ const revealCategories = function() {
 const hideCategories = function() {
     categoriesList.classList.remove("categories-list--active");
 };
-// End categories reveal
-//////////////////////////////////////////////////
+// Categories reveal END
+// `````````````````````````````````````````````````````
 // Go to top:
 //////////////////////////////////////////////////
 const goToTop = document.querySelector(".go-to-top");
@@ -2625,8 +2643,8 @@ const movePageTop = function() {
     });
     window.op;
 };
-// Go to top end
-//////////////////////////////////////////////////
+// Go to top END
+// ````````````````````````````````````````````````````````
 const bodyCheck = document.body.id.includes("home");
 const checkId = function() {
     if (!bodyCheck) return;
@@ -2639,9 +2657,25 @@ const checkId = function() {
     overlay.addEventListener("click", closeModal);
     submitSubscribe.addEventListener("click", closeSubscribe);
     goToTop.addEventListener("click", movePageTop);
-}; // sliderBtnRight.addEventListener('click', nextImage)
- //     sliderBtnLeft.addEventListener('click', prevImage)
- // Event listeners
+    openModal();
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Py0LO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "state", ()=>state);
+parcelHelpers.export(exports, "createItemObject", ()=>createItemObject);
+const state = {
+    items: {}
+};
+const createItemObject = function(data) {
+    const { item } = data.data;
+    return {
+        id: item.id,
+        title: item.title,
+        image: item.image_url
+    };
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cX9ui":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -2673,11 +2707,13 @@ const nextImage = function() {
 };
 // Workshop END
 ///////////////////////////////////////
+const goToTop = document.querySelector(".go-to-top");
 const bodyCheck = document.body.id.includes("workshop");
 const checkId = function() {
     if (!bodyCheck) return;
     (0, _homePage.categoriesTab).addEventListener("mouseover", (0, _homePage.revealCategories));
     (0, _homePage.categoriesTab).addEventListener("mouseleave", (0, _homePage.hideCategories));
+    goToTop.addEventListener("click", (0, _homePage.movePageTop));
     timeOut();
 };
 

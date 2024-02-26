@@ -1,4 +1,5 @@
 import { revealCategories, hideCategories, categoriesTab } from './homePage.js';
+import * as model from './model.js';
 //////////////////////////////////////////////////////////
 // This javascript file is for all of the categories pages
 /////////////////////////////////////////////////////////

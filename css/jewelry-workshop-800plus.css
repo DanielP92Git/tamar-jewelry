@@ -19,53 +19,7 @@ header {
   /* border: 4px solid rgb(20, 177, 75); */
 }
 
-.menu {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(135, 177, 20); */
-}
-
-.menu.sticky {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  z-index: 99;
-
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-  position: fixed;
-}
-
-.menu.hidden {
-  opacity: 0;
-  transform: translateY(8rem);
-}
-
-.main-images-container {
-  display: flex;
-  overflow: hidden;
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 4px solid rgb(177, 20, 143); */
-}
-
-.workshop-image {
-  width: 100vw;
-  height: 100%;
-  transition: transform 1s;
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 4px solid rgb(20, 177, 93); */
-}
+/* ~~~~~~ Mobile Menu ~~~~~~~ */
 
 .menubars-svg {
   display: none;
@@ -79,31 +33,21 @@ header {
   display: none;
 }
 
-.shoppingcart-svg {
+/* ````` Mobile Menu END ``````` */
+
+/* ~~~~~~~ Desktop Navbar ~~~~~~~~~ */
+
+.menu {
   display: flex;
   flex-flow: row;
-  justify-content: flex-start;
-  /* fill: rgb(0, 179, 255); */
-  width: 25px;
-  height: 25px;
-  /* position: absolute; */
-  left: 600px;
-}
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  z-index: 7;
 
-.shoppingcart-svg:hover {
-  fill: rgb(121, 221, 255);
-}
-
-.cart-number {
-  font-size: 0.9rem;
-  position: absolute;
-  right: 6.4%;
-  top: 0.8%;
-  background-color: rgb(0, 255, 213);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  text-align: center;
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
 }
 
 .menu__ul {
@@ -128,13 +72,12 @@ header {
 }
 
 .li:hover {
-  background-color: rgba(255, 255, 255, 0.925);
   cursor: pointer;
 }
 
-.li.sticky:hover {
+/* .li.sticky:hover {
   background-color: rgba(212, 199, 171, 0.925);
-}
+} */
 
 a {
   display: flex;
@@ -152,6 +95,10 @@ a {
   /* border: 2px solid rgb(40, 228, 37); */
 }
 
+a:hover {
+  color: rgb(152, 152, 152);
+}
+
 .categories-list {
   display: flex;
   flex-flow: column;
@@ -160,17 +107,18 @@ a {
   list-style: none;
   border: 1px solid;
   position: relative;
-  top: -20.6rem;
+  top: -20rem;
   background-color: rgba(250, 235, 215, 0.5);
   transition-property: all;
   transition-duration: 300ms;
   transition-timing-function: linear;
   opacity: 0;
+  z-index: -1;
 }
 
 .categories-list--active {
   opacity: 1;
-  z-index: 99;
+  z-index: 1;
   transform: translateY(20rem);
 }
 
@@ -181,6 +129,71 @@ a {
 .category-item:hover {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
+}
+
+.menu.sticky {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: 8;
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.shoppingcart-svg {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  width: 25px;
+  height: 25px;
+  left: 600px;
+}
+
+.shoppingcart-svg:hover {
+  fill: rgb(121, 221, 255);
+}
+
+.cart-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 6.4%;
+  top: 0.8%;
+  background-color: rgb(0, 255, 213);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* ```````Navbar END`````````` */
+
+.main-images-container {
+  display: flex;
+  overflow: hidden;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 4px solid rgb(177, 20, 143); */
+}
+
+.workshop-image {
+  width: 100vw;
+  height: 100%;
+  transition: transform 1s;
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 4px solid rgb(20, 177, 93); */
 }
 
 main {
