@@ -1,8 +1,12 @@
+import { revealCategories, hideCategories, categoriesTab } from './homePage.js';
 //////////////////////////////////////////////////////////
 // This javascript file is for all of the categories pages
 /////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////
+// revealCategories;
+// hideCategories;
+
 // Image flipper
 const frontImages = document.querySelectorAll('.front-image');
 const rearImages = document.querySelectorAll('.rear-image');
@@ -36,6 +40,14 @@ const addToCartFn = function () {
   console.log(cartNewValue);
 };
 
-addToCartBtns.forEach(btn => btn.addEventListener('click', addToCartFn));
 
 //////////////////////////////////////////////////
+
+const bodyCheck = document.body.id.includes('categories');
+
+export const checkId = function () {
+  if (!bodyCheck) return;
+  categoriesTab.addEventListener('mouseover', revealCategories);
+  categoriesTab.addEventListener('mouseleave', hideCategories);
+  addToCartBtns.forEach(btn => btn.addEventListener('click', addToCartFn));
+};

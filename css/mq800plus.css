@@ -12,9 +12,12 @@ body {
 header {
   display: flex;
   flex-flow: column;
-
   width: 100%;
+
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 4px solid black; */
 }
+
 .main-image {
   background-image: url(../imgs/main2_edited.jpg);
   background-position: center;
@@ -29,39 +32,7 @@ header {
   /* border: 4px solid rgb(177, 20, 143); */
 }
 
-.menu {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 30px;
-  /* position: absolute; */
-  /* top: -5px; */
-
-  /* ~~~~ FOR DEBUGGING~~~~*/
-  /* border: 2px solid rgb(20, 177, 35); */
-}
-
-.menu.sticky {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 60px;
-  z-index: 99;
-
-  transition: all;
-  transition-duration: 500ms;
-  transition-timing-function: ease;
-  position: fixed;
-}
-
-.menu.hidden {
-  opacity: 0;
-  transform: translateY(8rem);
-}
+/* ~~~~~~ Mobile Menu ~~~~~~~ */
 
 .menubars-svg {
   display: none;
@@ -75,31 +46,20 @@ header {
   display: none;
 }
 
-.shoppingcart-svg {
+/* ````` Mobile Menu END ``````` */
+
+/* ~~~~~~~ Desktop Navbar ~~~~~~~~~ */
+
+.menu {
   display: flex;
   flex-flow: row;
-  justify-content: flex-start;
-  /* fill: rgb(0, 179, 255); */
-  width: 25px;
-  height: 25px;
-  /* position: absolute; */
-  left: 600px;
-}
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
 
-.shoppingcart-svg:hover {
-  fill: rgb(121, 221, 255);
-}
-
-.cart-number {
-  font-size: 0.9rem;
-  position: absolute;
-  right: 6%;
-  top: 0.1%;
-  background-color: rgb(0, 255, 213);
-  width: 15px;
-  height: 15px;
-  border-radius: 50%;
-  text-align: center;
+  /* ~~~~ FOR DEBUGGING~~~~*/
+  /* border: 2px solid rgb(20, 177, 35); */
 }
 
 .menu__ul {
@@ -117,7 +77,6 @@ header {
 .li {
   width: 100%;
   height: 50px;
-  border-right: 1px solid black;
   list-style: none;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
@@ -125,13 +84,12 @@ header {
 }
 
 .li:hover {
-  background-color: rgba(255, 255, 255, 0.925);
   cursor: pointer;
 }
 
-.li.sticky:hover {
+/* .li.sticky:hover {
   background-color: rgba(212, 199, 171, 0.925);
-}
+} */
 
 a {
   display: flex;
@@ -149,6 +107,10 @@ a {
   /* border: 2px solid rgb(40, 228, 37); */
 }
 
+a:hover {
+  color: rgb(152, 152, 152);
+}
+
 .categories-list {
   display: flex;
   flex-flow: column;
@@ -163,12 +125,13 @@ a {
   transition-duration: 300ms;
   transition-timing-function: linear;
   opacity: 0;
+  z-index: -1;
 }
 
 .categories-list--active {
   opacity: 1;
-  z-index: 99;
-  transform: translateY(19.4rem);
+  z-index: 1;
+  transform: translateY(20rem);
 }
 
 .category-item {
@@ -179,6 +142,55 @@ a {
   cursor: pointer;
   background-color: rgba(255, 255, 255, 0.5);
 }
+
+.menu.sticky {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  z-index: 99;
+
+  transition: all;
+  transition-duration: 500ms;
+  transition-timing-function: ease;
+  position: fixed;
+}
+
+.menu.hidden {
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+.shoppingcart-svg {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-start;
+  width: 25px;
+  height: 25px;
+  left: 600px;
+}
+
+.shoppingcart-svg:hover {
+  fill: rgb(121, 221, 255);
+}
+
+.cart-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  position: absolute;
+  right: 6.4%;
+  top: 0.8%;
+  background-color: rgb(0, 255, 213);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+/* ```````Navbar END`````````` */
 
 .logo {
   display: block;
@@ -196,8 +208,8 @@ a {
 }
 
 .modal {
-  display: none;
-  flex-flow: column wrap;
+  display: flex;
+  flex-flow: column;
   align-items: center;
 
   width: 80vw;
@@ -221,6 +233,7 @@ a {
 }
 
 .subscribenow-text {
+  width: auto;
   background-color: rgba(255, 255, 255, 0.662);
 }
 
@@ -230,7 +243,7 @@ a {
   align-items: center;
 
   margin-top: 30px;
-  width: 30rem;
+  width: auto;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 3px solid green; */
@@ -241,12 +254,14 @@ a {
   margin-right: 20px;
   font-size: 1.5rem;
   background-color: rgba(255, 255, 255, 0.662);
+  /* padding: 10px; */
 }
 
 #subscribe-email {
   margin-right: 20px;
   width: 15rem;
   height: 1.5rem;
+  font-size: 1rem;
 }
 
 #submit-subscribe {
@@ -262,7 +277,7 @@ a {
 }
 
 .overlay {
-  display: none;
+  /* display: none; */
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.8);
@@ -353,7 +368,7 @@ main {
   width: 95%;
   height: 65%;
   position: relative;
-  /* top: 105%; */
+  margin-top: 5rem;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 3px solid rgb(0, 217, 255); */
@@ -460,9 +475,9 @@ main {
 
 .go-to-top:hover {
   border: rgb(113, 101, 33), solid;
-  color: rgb(113, 101, 33);
+  /* color: rgb(113, 101, 33); */
   cursor: pointer;
-  background-color: rgba(196, 106, 181, 0.377);
+  background-color: rgba(111, 134, 169, 0.377);
 }
 
 .footer {

@@ -155,7 +155,7 @@ a {
 .main-image {
   display: flex;
   justify-content: center;
-  margin: 3rem 0 10rem 0;
+  margin: 3rem 0 1rem 0;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 2px solid rgb(40, 228, 37); */
@@ -176,7 +176,7 @@ a {
 /* ~~~~~~~~~~~~ Shopping cart ~~~~~~~~~~~~~~ */
 main {
   display: flex;
-  margin-bottom: 20rem;
+  margin-bottom: 15rem;
 
   /* ~~~~ FOR DEBUGGING~~~~*/
   /* border: 1px solid rgb(0, 0, 0); */

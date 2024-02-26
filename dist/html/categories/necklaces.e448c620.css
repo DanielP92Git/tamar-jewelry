@@ -47,7 +47,6 @@ header {
 }
 
 .shoppingcart-svg {
-  fill: #00b3ff;
   flex-flow: row;
   justify-content: flex-start;
   width: 25px;
@@ -62,14 +61,17 @@ header {
 
 .cart-number {
   text-align: center;
-  background-color: #ff8400;
+  background-color: #00ffd5;
   border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   width: 15px;
   height: 15px;
-  font-size: .9rem;
+  font-size: .8rem;
+  display: flex;
   position: absolute;
-  top: 13%;
-  right: 6.5%;
+  top: .8%;
+  right: 6.4%;
 }
 
 .menu__ul {

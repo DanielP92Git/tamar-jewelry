@@ -2,45 +2,11 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import * as categoriesFns from './categories.js';
 import * as homeFn from './homePage.js';
-
-
-// Modal windows:
-//////////////////////////////////////////////////
-// const modal = document.querySelector('.modal');
-// const overlay = document.querySelector('.overlay');
-// const btnCloseModal = document.querySelector('.close-modal');
-// const btnCloseThanks = document.querySelector('.close-thanks');
-// const subscribeImage = document.querySelector('#subscribe-image');
-// const submitSubscribe = document.querySelector('#submit-subscribe');
-// const subscribeEmail = document.querySelector('#subscribe-email');
-// const subscribeLabel = document.querySelector('.subscribe-label');
-// const thanksHide = document.querySelector('.hide');
-
-// const closeModal = function () {
-//   modal.style.display = 'none';
-//   overlay.style.display = 'none';
-// };
-
-// const closeSubscribe = function () {
-//   modal.style.display = 'none';
-//   thanksHide.classList.remove('hide');
-// };
-
-// const closeThanks = function () {
-//   thanksHide.classList.add('hide');
-//   overlay.style.display = 'none';
-// };
-
-// btnCloseModal.addEventListener('click', closeModal);
-// btnCloseThanks.addEventListener('click', closeThanks);
-// overlay.addEventListener('click', closeModal);
-// submitSubscribe.addEventListener('click', closeSubscribe);
-// Modal windows end
-//////////////////////////////////////////////////
+import * as workshopFn from './workshop.js';
+import * as aboutFn from './about.js';
+import * as contactFn from './contactMe.js';
 
 //----------------------------------------------------
-
-homeFn.checkId();
 
 const menuBars = document.querySelector('.menubars-svg');
 const menuBarsSVG = document.querySelector('.menubars-toggle');
@@ -55,55 +21,14 @@ const changeSVG = function () {
 };
 menuBars.addEventListener('click', changeSVG);
 
-// const getRect = parent.getClientRects()
-// getRect.addEventListener('scroll', changeSVG);
 
-// const generateMarkup = function () {
-//   const parent = document.querySelector('.menubars-toggle');
-
-//   const markup =
-//   `<use xlink:href="#shoppingcart-svg"></use>`;
-
-//   parent.remove(markup);
-
-// };
 
 //////////////////////////////////////////////////
-// Categories reveal
-
-const categoriesList = document.querySelector('.categories-list');
-const categoriesTab = document.querySelector('.categories-tab');
-
-export const revealCategories = function () {
-  categoriesList.classList.add('categories-list--active');
-};
-
-export const hideCategories = function () {
-  categoriesList.classList.remove('categories-list--active');
-};
-
-categoriesTab.addEventListener('mouseover', revealCategories);
-categoriesTab.addEventListener('mouseleave', hideCategories);
-
-// End categories reveal
-//////////////////////////////////////////////////
-
-// Go to top:
-//////////////////////////////////////////////////
-const goToTop = document.querySelector('.go-to-top');
-const header = document.querySelector('header');
-
-goToTop.addEventListener('click', function () {
-  header.scrollIntoView({ behavior: 'smooth' });
-});
-
-// Go to top end
-//////////////////////////////////////////////////
-
-// Sticky navigation
+// Sticky navigation bar
 //////////////////////////////////////////////////
 // const menuHeight = menu.getBoundingClientRect().height;
 const menu = document.querySelector('.menu');
+const header = document.querySelector('header');
 
 const stickyMenu = function (entries) {
   const [entry] = entries;
@@ -154,33 +79,29 @@ headerObserverTwo.observe(header);
 //   threshold: 0,
 // })
 // imgObserver.observe(imgs[0],imgs[1]);
-const images = document.querySelectorAll('.workshop-image');
 
-let curImg = 0;
-const maxImages = images.length;
+///////////////////////////////////////
 
-const timeOut = function () {
-  setTimeout(() => {
-    goToImage();
-  }, 1000);
+const init = function () {
+  homeFn.checkId();
+  workshopFn.checkId();
+  aboutFn.checkId();
+  categoriesFns.checkId();
+  contactFn.checkId();
 };
-timeOut();
+init();
 
-const goToImage = function (slide) {
-  images.forEach(img => (img.style.transform = `translateX(${-100 * slide}%)`));
-  // images.forEach(img => (img.style.transform = `translateX(-100%)`));
-  setTimeout(() => {
-    nextImage();
-  }, 3000);
-};
+// ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-const nextImage = function () {
-  if (curImg === maxImages - 1) {
-    curImg = 0;
-  } else {
-    curImg++;
-  }
-  console.log(curImg);
-  goToImage(curImg);
-};
-// pageWindow.addEventListener('click', goToImage)
+// const getRect = parent.getClientRects()
+// getRect.addEventListener('scroll', changeSVG);
+
+// const generateMarkup = function () {
+//   const parent = document.querySelector('.menubars-toggle');
+
+//   const markup =
+//   `<use xlink:href="#shoppingcart-svg"></use>`;
+
+//   parent.remove(markup);
+
+// };

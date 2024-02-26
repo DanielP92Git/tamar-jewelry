@@ -579,45 +579,22 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"1GgH0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "revealCategories", ()=>revealCategories);
-parcelHelpers.export(exports, "hideCategories", ()=>hideCategories);
-var _webImmediateJs = require("core-js/modules/web.immediate.js"); // pageWindow.addEventListener('click', goToImage)
+var _webImmediateJs = require("core-js/modules/web.immediate.js"); // ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+ // const getRect = parent.getClientRects()
+ // getRect.addEventListener('scroll', changeSVG);
+ // const generateMarkup = function () {
+ //   const parent = document.querySelector('.menubars-toggle');
+ //   const markup =
+ //   `<use xlink:href="#shoppingcart-svg"></use>`;
+ //   parent.remove(markup);
+ // };
 var _runtime = require("regenerator-runtime/runtime");
 var _categoriesJs = require("./categories.js");
 var _homePageJs = require("./homePage.js");
-// Modal windows:
-//////////////////////////////////////////////////
-// const modal = document.querySelector('.modal');
-// const overlay = document.querySelector('.overlay');
-// const btnCloseModal = document.querySelector('.close-modal');
-// const btnCloseThanks = document.querySelector('.close-thanks');
-// const subscribeImage = document.querySelector('#subscribe-image');
-// const submitSubscribe = document.querySelector('#submit-subscribe');
-// const subscribeEmail = document.querySelector('#subscribe-email');
-// const subscribeLabel = document.querySelector('.subscribe-label');
-// const thanksHide = document.querySelector('.hide');
-// const closeModal = function () {
-//   modal.style.display = 'none';
-//   overlay.style.display = 'none';
-// };
-// const closeSubscribe = function () {
-//   modal.style.display = 'none';
-//   thanksHide.classList.remove('hide');
-// };
-// const closeThanks = function () {
-//   thanksHide.classList.add('hide');
-//   overlay.style.display = 'none';
-// };
-// btnCloseModal.addEventListener('click', closeModal);
-// btnCloseThanks.addEventListener('click', closeThanks);
-// overlay.addEventListener('click', closeModal);
-// submitSubscribe.addEventListener('click', closeSubscribe);
-// Modal windows end
-//////////////////////////////////////////////////
+var _workshopJs = require("./workshop.js");
+var _aboutJs = require("./about.js");
+var _contactMeJs = require("./contactMe.js");
 //----------------------------------------------------
-_homePageJs.checkId();
 const menuBars = document.querySelector(".menubars-svg");
 const menuBarsSVG = document.querySelector(".menubars-toggle");
 const changeSVG = function() {
@@ -629,43 +606,12 @@ const changeSVG = function() {
     document.querySelector("use").setAttribute("href", `#${icon}`);
 };
 menuBars.addEventListener("click", changeSVG);
-// const getRect = parent.getClientRects()
-// getRect.addEventListener('scroll', changeSVG);
-// const generateMarkup = function () {
-//   const parent = document.querySelector('.menubars-toggle');
-//   const markup =
-//   `<use xlink:href="#shoppingcart-svg"></use>`;
-//   parent.remove(markup);
-// };
 //////////////////////////////////////////////////
-// Categories reveal
-const categoriesList = document.querySelector(".categories-list");
-const categoriesTab = document.querySelector(".categories-tab");
-const revealCategories = function() {
-    categoriesList.classList.add("categories-list--active");
-};
-const hideCategories = function() {
-    categoriesList.classList.remove("categories-list--active");
-};
-categoriesTab.addEventListener("mouseover", revealCategories);
-categoriesTab.addEventListener("mouseleave", hideCategories);
-// End categories reveal
-//////////////////////////////////////////////////
-// Go to top:
-//////////////////////////////////////////////////
-const goToTop = document.querySelector(".go-to-top");
-const header = document.querySelector("header");
-goToTop.addEventListener("click", function() {
-    header.scrollIntoView({
-        behavior: "smooth"
-    });
-});
-// Go to top end
-//////////////////////////////////////////////////
-// Sticky navigation
+// Sticky navigation bar
 //////////////////////////////////////////////////
 // const menuHeight = menu.getBoundingClientRect().height;
 const menu = document.querySelector(".menu");
+const header = document.querySelector("header");
 const stickyMenu = function(entries) {
     const [entry] = entries;
     if (!entry.isIntersecting) menu.classList.add("sticky"), menu.classList.remove("hidden");
@@ -706,30 +652,17 @@ headerObserverTwo.observe(header);
 //   threshold: 0,
 // })
 // imgObserver.observe(imgs[0],imgs[1]);
-const images = document.querySelectorAll(".workshop-image");
-let curImg = 0;
-const maxImages = images.length;
-const timeOut = function() {
-    setTimeout(()=>{
-        goToImage();
-    }, 1000);
+///////////////////////////////////////
+const init = function() {
+    _homePageJs.checkId();
+    _workshopJs.checkId();
+    _aboutJs.checkId();
+    _categoriesJs.checkId();
+    _contactMeJs.checkId();
 };
-timeOut();
-const goToImage = function(slide) {
-    images.forEach((img)=>img.style.transform = `translateX(${-100 * slide}%)`);
-    // images.forEach(img => (img.style.transform = `translateX(-100%)`));
-    setTimeout(()=>{
-        nextImage();
-    }, 3000);
-};
-const nextImage = function() {
-    if (curImg === maxImages - 1) curImg = 0;
-    else curImg++;
-    console.log(curImg);
-    goToImage(curImg);
-};
+init();
 
-},{"core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./categories.js":"23tIG","./homePage.js":"AD1zb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports) {
+},{"core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./categories.js":"23tIG","./homePage.js":"AD1zb","./workshop.js":"cX9ui","./about.js":"5sN4R","./contactMe.js":"gDwif"}],"49tUX":[function(require,module,exports) {
 "use strict";
 // TODO: Remove this module from `core-js@4` since it's split to modules listed below
 require("52e9b3eefbbce1ed");
@@ -2548,15 +2481,19 @@ try {
 }
 
 },{}],"23tIG":[function(require,module,exports) {
-//////////////////////////////////////////////////////////
-// This javascript file is for all of the categories pages
-/////////////////////////////////////////////////////////
-////////////////////////////////////////////////
-// Image flipper
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "fronFlipper", ()=>fronFlipper);
 parcelHelpers.export(exports, "backFlipper", ()=>backFlipper);
+parcelHelpers.export(exports, "checkId", ()=>checkId);
+var _homePageJs = require("./homePage.js");
+//////////////////////////////////////////////////////////
+// This javascript file is for all of the categories pages
+/////////////////////////////////////////////////////////
+////////////////////////////////////////////////
+// revealCategories;
+// hideCategories;
+// Image flipper
 const frontImages = document.querySelectorAll(".front-image");
 const rearImages = document.querySelectorAll(".rear-image");
 const fronFlipper = frontImages.forEach((img)=>img.addEventListener("mouseover", function() {
@@ -2578,9 +2515,16 @@ const addToCartFn = function() {
     cartNumber.textContent = cartNewValue;
     console.log(cartNewValue);
 };
-addToCartBtns.forEach((btn)=>btn.addEventListener("click", addToCartFn)); //////////////////////////////////////////////////
+//////////////////////////////////////////////////
+const bodyCheck = document.body.id.includes("categories");
+const checkId = function() {
+    if (!bodyCheck) return;
+    (0, _homePageJs.categoriesTab).addEventListener("mouseover", (0, _homePageJs.revealCategories));
+    (0, _homePageJs.categoriesTab).addEventListener("mouseleave", (0, _homePageJs.hideCategories));
+    addToCartBtns.forEach((btn)=>btn.addEventListener("click", addToCartFn));
+};
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./homePage.js":"AD1zb"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -2611,13 +2555,41 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"AD1zb":[function(require,module,exports) {
-// Sellectors
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "categoriesList", ()=>categoriesList);
+parcelHelpers.export(exports, "categoriesTab", ()=>categoriesTab);
+parcelHelpers.export(exports, "revealCategories", ()=>revealCategories);
+parcelHelpers.export(exports, "hideCategories", ()=>hideCategories);
 parcelHelpers.export(exports, "checkId", ()=>checkId);
 const images = document.querySelectorAll(".slider-image-item");
 const sliderBtnRight = document.querySelector(".slider-btn--right");
 const sliderBtnLeft = document.querySelector(".slider-btn--left");
+// Modal windows:
+////////////////////////////////////////////////
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const btnCloseThanks = document.querySelector(".close-thanks");
+const submitSubscribe = document.querySelector("#submit-subscribe");
+const thanksHide = document.querySelector(".hide");
+// const subscribeEmail = document.querySelector('#subscribe-email');
+// const subscribeLabel = document.querySelector('.subscribe-label');
+// const subscribeImage = document.querySelector('#subscribe-image');
+const closeModal = function() {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+};
+const closeSubscribe = function() {
+    modal.style.display = "none";
+    thanksHide.classList.remove("hide");
+};
+const closeThanks = function() {
+    thanksHide.classList.add("hide");
+    overlay.style.display = "none";
+};
+// Modal windows end
+//////////////////////////////////////////////////
 let curSlide = 0;
 const maxSlide = images.length;
 const goToImage = function(slide) {
@@ -2633,15 +2605,106 @@ const prevImage = function() {
     else curSlide--;
     goToImage(curSlide);
 };
+const categoriesList = document.querySelector(".categories-list");
+const categoriesTab = document.querySelector(".categories-tab");
+const revealCategories = function() {
+    categoriesList.classList.add("categories-list--active");
+};
+const hideCategories = function() {
+    categoriesList.classList.remove("categories-list--active");
+};
+// End categories reveal
+//////////////////////////////////////////////////
+// Go to top:
+//////////////////////////////////////////////////
+const goToTop = document.querySelector(".go-to-top");
+const header = document.querySelector("header");
+const movePageTop = function() {
+    header.scrollIntoView({
+        behavior: "smooth"
+    });
+    window.op;
+};
+// Go to top end
+//////////////////////////////////////////////////
 const bodyCheck = document.body.id.includes("home");
 const checkId = function() {
     if (!bodyCheck) return;
     sliderBtnRight.addEventListener("click", nextImage);
     sliderBtnLeft.addEventListener("click", prevImage);
+    categoriesTab.addEventListener("mouseover", revealCategories);
+    categoriesTab.addEventListener("mouseleave", hideCategories);
+    btnCloseModal.addEventListener("click", closeModal);
+    btnCloseThanks.addEventListener("click", closeThanks);
+    overlay.addEventListener("click", closeModal);
+    submitSubscribe.addEventListener("click", closeSubscribe);
+    goToTop.addEventListener("click", movePageTop);
 }; // sliderBtnRight.addEventListener('click', nextImage)
  //     sliderBtnLeft.addEventListener('click', prevImage)
  // Event listeners
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7uCb0","1GgH0"], "1GgH0", "parcelRequire471a")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cX9ui":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkId", ()=>checkId);
+var _homePage = require("./homePage");
+// Workshop page images slider
+///////////////////////////////////////
+const images = document.querySelectorAll(".workshop-image");
+let curImg = 0;
+const maxImages = images.length;
+const timeOut = function() {
+    setTimeout(()=>{
+        goToImage();
+    }, 1000);
+};
+const goToImage = function(slide) {
+    images.forEach((img)=>img.style.transform = `translateX(${-100 * slide}%)`);
+    // images.forEach(img => (img.style.transform = `translateX(-100%)`));
+    setTimeout(()=>{
+        nextImage();
+    }, 3000);
+};
+const nextImage = function() {
+    if (curImg === maxImages - 1) curImg = 0;
+    else curImg++;
+    //   console.log(curImg);
+    goToImage(curImg);
+};
+// Workshop END
+///////////////////////////////////////
+const bodyCheck = document.body.id.includes("workshop");
+const checkId = function() {
+    if (!bodyCheck) return;
+    (0, _homePage.categoriesTab).addEventListener("mouseover", (0, _homePage.revealCategories));
+    (0, _homePage.categoriesTab).addEventListener("mouseleave", (0, _homePage.hideCategories));
+    timeOut();
+};
+
+},{"./homePage":"AD1zb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5sN4R":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkId", ()=>checkId);
+var _homePage = require("./homePage");
+const bodyCheck = document.body.id.includes("about");
+const checkId = function() {
+    if (!bodyCheck) return;
+    (0, _homePage.categoriesTab).addEventListener("mouseover", (0, _homePage.revealCategories));
+    (0, _homePage.categoriesTab).addEventListener("mouseleave", (0, _homePage.hideCategories));
+};
+
+},{"./homePage":"AD1zb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gDwif":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "checkId", ()=>checkId);
+var _homePage = require("./homePage");
+const bodyCheck = document.body.id.includes("contact-me");
+const checkId = function() {
+    if (!bodyCheck) return;
+    (0, _homePage.categoriesTab).addEventListener("mouseover", (0, _homePage.revealCategories));
+    (0, _homePage.categoriesTab).addEventListener("mouseleave", (0, _homePage.hideCategories));
+};
+
+},{"./homePage":"AD1zb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["7uCb0","1GgH0"], "1GgH0", "parcelRequire471a")
 
 //# sourceMappingURL=index.850bd9e5.js.map
